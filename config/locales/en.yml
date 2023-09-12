@@ -1,0 +1,17 @@
+en:
+  response:
+    success: 'Success'
+    error: 'Error'
+    invalid_parameters: 'Invalid request parameters'
+  auth:
+    invalid_email_or_password: 'Invalid email or password'
+    invalid_token: 'Invalid access token'
+  post:
+    not_found: 'Post not found'
+    deleted: 'Post deleted'
+  validation:
+    cannot_be_blank: 'Cannot be blank'
+    already_exists: 'has already been taken'
+    invalid: 'is invalid'
+    must_be_at_least: 'must be at least %{count} characters long'
+  invalid_locale: 'Invalid locale. Supported locales: en'

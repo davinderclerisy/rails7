@@ -1,0 +1,17 @@
+hi:
+  response:
+    success: 'सफल'
+    error: 'त्रुटि'
+    invalid_parameters: 'अमान्य अनुरोध पैरामीटर'
+  auth:
+    invalid_email_or_password: 'अमान्य ईमेल या पासवर्ड'
+    invalid_token: 'अमान्य पहुँच टोकन'
+  post:
+    not_found: 'पोस्ट नहीं मिली'
+    deleted: 'पोस्ट हटा दी गई'
+  validation:
+    cannot_be_blank: 'रिक्त नहीं हो सकता'
+    already_exists: 'पहले से ही लिया जा चुका है'
+    invalid: 'अमान्य है'
+    must_be_at_least: 'कम से कम %{count} अक्षर लंबा होना चाहिए'
+  invalid_locale: 'अमान्य भाषा. समर्थित भाषा: en'
