@@ -18,7 +18,7 @@ describe 'Profile API' do
     get 'Get the current user' do
       tags 'Profile'
       produces 'application/json'
-      security [BearerAuth: {}]
+      security [BearerAuth: []]
 
       response '200', 'OK' do
         schema type: :object,

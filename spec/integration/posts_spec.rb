@@ -19,7 +19,7 @@ describe 'Posts API' do
     get 'Retrieves a list of posts' do
       tags 'Posts'
       produces 'application/json'
-      security [BearerAuth: {}]
+      security [BearerAuth: []]
       parameter name: :page, in: :query, type: :integer, description: 'Page number (default: 1)'
       parameter name: :per_page, in: :query, type: :integer, description: 'Items per page (default: 10)'
 
@@ -93,7 +93,7 @@ describe 'Posts API' do
       tags 'Posts'
       produces 'application/json'
       consumes 'application/json'
-      security [BearerAuth: {}]
+      security [BearerAuth: []]
       parameter name: :post_body, in: :body, schema: {
         type: :object,
         properties: {
@@ -169,7 +169,7 @@ describe 'Posts API' do
     get 'Retrieves a single post by ID' do
       tags 'Posts'
       produces 'application/json'
-      security [BearerAuth: {}]
+      security [BearerAuth: []]
       parameter name: :id, in: :path, type: :integer, description: 'Post ID'
 
       response '200', 'Post found' do
@@ -239,7 +239,7 @@ describe 'Posts API' do
       tags 'Posts'
       produces 'application/json'
       consumes 'application/json'
-      security [BearerAuth: {}]
+      security [BearerAuth: []]
       parameter name: :id, in: :path, type: :integer, description: 'Post ID'
       parameter name: :post_body, in: :body, schema: {
         type: :object,
@@ -321,7 +321,7 @@ describe 'Posts API' do
     delete 'Deletes a post by ID' do
       tags 'Posts'
       produces 'application/json'
-      security [BearerAuth: {}]
+      security [BearerAuth: []]
       parameter name: :id, in: :path, type: :integer, description: 'Post ID'
   
       response '200', 'Post deleted' do
