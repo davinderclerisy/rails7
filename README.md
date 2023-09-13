@@ -15,13 +15,15 @@ Install Bundle
 sudo gem install bundler
 ```
 
-Bundle Instal
+Bundle Install
 ```
 bundle install
 ```
 
 Setup enviroment file
 rename .env.example to .env
+
+
 
 Setup Database
 ```
@@ -36,5 +38,10 @@ bin/rails server
 Run Production Web Server
 ```
 bin/rails server -e=production
+```
+
+Access Explorer
+```
+http://127.0.0.1:3000/explorer
 ```
 
