@@ -1,6 +1,6 @@
-## Ruby On Rails 7 REST API
+# Ruby On Rails 7 API
 
-# Setup
+## Setup
 
 Install RVM
 ```
