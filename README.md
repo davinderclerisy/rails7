@@ -23,6 +23,8 @@ bundle install
 Setup enviroment file
 rename .env.example to .env
 
+
+
 Setup Database
 ```
 bin/rails db:setup
