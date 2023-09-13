@@ -15,7 +15,7 @@ Install Bundle
 sudo gem install bundler
 ```
 
-Bundle Instal
+Bundle Install
 ```
 bundle install
 ```
