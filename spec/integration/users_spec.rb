@@ -3,7 +3,7 @@ require 'swagger_helper'
 describe 'Profile API' do
 
   before(:all) do
-    FactoryBot.create(:user) rescue nil
+    FactoryBot.create(:user, email: 'user@example.com', password: 'password123') rescue nil
     # Create a user and retrieve the token before running the tests
     post "/api/v1/auth/login", params: { email: 'user@example.com', password: 'password123' }, as: :json
 
