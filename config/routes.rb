@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  mount Rswag::Ui::Engine => '/api-docs'
-  mount Rswag::Api::Engine => '/api-docs'
+  mount Rswag::Ui::Engine => '/explorer'
+  mount Rswag::Api::Engine => '/explorer'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root to: proc { |env| [200, {}, ["Hello World"]] }
+  root to: proc { |env| [200, {}, [ENV.fetch('APP_NAME') { 'API V1' }]] }
   
   # /api/v1
   scope :api do
