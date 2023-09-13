@@ -40,3 +40,8 @@ Run Production Web Server
 bin/rails server -e=production
 ```
 
+Access Explorer
+```
+http://127.0.0.1:3000/explorer
+```
+
