@@ -7,7 +7,7 @@ class AuthenticationController < ApplicationController
         @user = User.find_by_email(params[:email])
         if @user&.authenticate(params[:password])
             time = Time.now + ENV.fetch('JWT_EXPIRATION', 3600).to_i
-            token = JwtToken.jwt_encode({ user_id: @user.id, exp: time })
+            token = JwtToken.jwt_encode({ user_id: @user.id, exp: time.to_i })
  
             render_response({ 
                 user: @user.as_json(except: [:password, :password_digest]), 
