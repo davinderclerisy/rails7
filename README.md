@@ -31,7 +31,7 @@ Setup Database
 ```
 bin/rails db:setup
 ```
-
+## Run
 Run Development Web Server
 ```
 bin/rails server
