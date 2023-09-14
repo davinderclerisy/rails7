@@ -6,6 +6,9 @@ hi:
   auth:
     invalid_email_or_password: 'अमान्य ईमेल या पासवर्ड'
     invalid_token: 'अमान्य पहुँच टोकन'
+    not_verified: 'खाता सत्यापित नहीं है'
+    account_confirmed: 'खाते की पुष्टि की गई'
+    link_expired: 'लिंक अमान्य या पहले से ही इस्तेमाल किया गया'
   post:
     not_found: 'पोस्ट नहीं मिली'
     deleted: 'पोस्ट हटा दी गई'

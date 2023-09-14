@@ -1,5 +1,10 @@
 # Ruby On Rails 7 API
 
+## Prerequisites
+Ruby 3.0.2
+Redis 6
+Postgresql
+
 ## Setup
 
 Install RVM
@@ -42,8 +47,36 @@ Run Production Web Server
 bin/rails server -e=production
 ```
 
-Access Explorer
+Access OAS (Swagger)
 ```
 http://127.0.0.1:3000/explorer
 ```
+Run Queue Worker (Sidekiq)
+```
+bin/rails sidekiq
+```
 
+## Migration
+
+### Create Migration
+```
+rails generate migration AddIsVerifiedToUsers is_verified:boolean
+```
+
+### Run Migration
+```
+bin/rails db:migrate
+```
+
+## Test
+
+### Run
+```
+bundle exec rspec spec
+
+```
+
+### Generate Open Api Specification (Swagger)
+```
+bin/rails rswag:specs:swaggerize
+```

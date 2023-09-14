@@ -1,0 +1,19 @@
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 10px; text-align: left;">
+    <div style="text-align: left; margin-bottom: 20px;">
+        <img src="<%= ENV.fetch('BASE_URL') + '/assets/images/logo.png' %>" alt="<%= ENV.fetch('APP_NAME') { 'ROR API' } %> Logo" style="width: 50px; height: auto;" />
+    </div>
+    <div style="padding: 20px;">
+        <h2>Welcome to <%= ENV.fetch('APP_NAME') { 'ROR API' } %>!</h2>
+        <p>We are delighted to have you join us. To get started, please click the button below to confirm your account:</p>
+        <p style="text-align: center;">
+            <a href="<%=@confirmation_link%>" style="display: inline-block; padding: 12px 24px; background-color: #009688; color: #ffffff; text-decoration: none; border-radius: 25px; font-weight: bold;">
+            Confirm Your Account
+            </a>
+        </p>
+        <p>Thank you for choosing us. We are committed to providing you with an elegant and exceptional experience.</p>
+    </div>
+    <div style="text-align: left;">
+        <p>Warm regards,</p>
+        <p>The RoR Team</p>
+    </div>
+</div>

@@ -126,4 +126,41 @@ describe 'Authentication API' do
     end
   end
 
+  path '/auth/confirm-account' do
+    get 'Confirm account' do
+      tags 'Authentication'
+      consumes 'application/json'
+      produces 'application/json'
+      parameter name: :token, in: :query, type: :string, description: 'Confirmation token'
+      response '200', 'OK' do
+        schema type: :object,
+          properties: {
+            data: { type: "object" },
+            message: { type: "string" }
+          },
+          required: ['data', 'message']
+
+        let(:token) { 
+          FactoryBot.create(:user, is_verified: false, token: 'dummytoken') rescue nil
+          'dummytoken'
+        }
+
+        run_test!
+      end
+
+      response '401', 'Unauthorized' do
+        schema type: :object,
+          properties: {
+            data: { type: "object" },
+            message: { type: "string" }
+          },
+          required: ['data', 'message']
+
+        let(:token) { :invalid_token }
+
+        run_test!
+      end
+    end
+  end
+
 end

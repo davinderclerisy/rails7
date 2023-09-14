@@ -16,7 +16,7 @@ class ApplicationController < ActionController::API
         rescue I18n::InvalidLocale
             render_response({}, :bad_request, I18n.t('invalid_locale'))
         rescue ActiveRecord::StatementInvalid => e
-            puts e.message
+            puts e.full_message
             render_response({}, :bad_request, I18n.t('response.invalid_parameters'))
         rescue => e
             puts e.full_message
@@ -39,6 +39,11 @@ class ApplicationController < ActionController::API
             @decoded = JwtToken.jwt_decode(token)
             ActiveRecord::Base.logger.silence do
                 @current_user = User.find(@decoded[:user_id])
+                if @current_user == nil
+                    render_response({}, :unauthorized, I18n.t('auth.invalid_token'))
+                elsif !@current_user&.is_verified
+                    render_response({}, :unauthorized, I18n.t('auth.not_verified'))
+                end
             end
         rescue => e
             render_response({}, :unauthorized, I18n.t('auth.invalid_token'))

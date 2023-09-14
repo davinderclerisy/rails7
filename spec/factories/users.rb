@@ -5,5 +5,7 @@ FactoryBot.define do
       user_name { 'johndoe' }
       email { 'user@example.com' }
       password { 'password123' }
+      token { 'dummytoken' }
+      is_verified { true }
     end
 end

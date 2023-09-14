@@ -6,6 +6,9 @@ en:
   auth:
     invalid_email_or_password: 'Invalid email or password'
     invalid_token: 'Invalid access token'
+    not_verified: 'Account not verified'
+    account_confirmed: 'Account confirmed'
+    link_expired: 'Link expired or already used'
   post:
     not_found: 'Post not found'
     deleted: 'Post deleted'

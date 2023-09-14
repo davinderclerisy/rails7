@@ -1,8 +1,14 @@
 class User < ApplicationRecord
-    has_secure_password # macro
-    has_many :posts # association
+    default_scope { select(:id, :name, :user_name, :email, :created_at, :updated_at, :is_verified) } 
+    
+    # macros
+    has_secure_password 
 
-    before_validation :sanitize_user_name # Active Record Callback
+    # associations
+    has_many :posts 
+
+    # Active Record Callback
+    before_validation :sanitize_user_name 
 
     # Active Record Validation 
     validates :email, presence: { 
@@ -24,6 +30,10 @@ class User < ApplicationRecord
  
     def sanitize_user_name
         self.user_name = user_name.downcase.gsub(/[^a-z0-9]+/, "")
+    end
+
+    def as_json(options = {})
+       super({:only => [:id, :name, :user_name, :email, :created_at, :updated_at, :is_verified]}.merge(options))
     end
     
 end

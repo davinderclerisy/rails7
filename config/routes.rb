@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       scope :auth do
         post 'register', to: 'authentication#register'
         post 'login', to: 'authentication#login'
+        get 'confirm-account', to: 'authentication#confirm_account'
       end
 
       # Profile
