@@ -2,7 +2,9 @@
 
 ## Prerequisites
 Ruby 3.0.2
+
 Redis 6
+
 Postgresql
 
 ## Setup
