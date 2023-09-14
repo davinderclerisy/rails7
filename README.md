@@ -2,7 +2,9 @@
 
 ## Prerequisites
 Ruby 3.0.2
+
 Redis 6
+
 Postgresql
 
 ## Setup
@@ -27,15 +29,20 @@ Bundle Install
 bundle install
 ```
 
-Setup enviroment file
-rename .env.example to .env
+### Setup enviroment file
 
+Rename .env.example to .env
 
 
 Setup Database
 ```
-bin/rails db:setup
+bin/rails db:create
 ```
+```
+bin/rails db:migrate
+```
+
+
 ## Run
 Run Development Web Server
 ```
