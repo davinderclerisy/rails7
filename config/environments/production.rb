@@ -91,10 +91,10 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
   # SMTP settings for gmail  
   config.action_mailer.smtp_settings = {    
-    address:              ENV.fatch('EMAIL_HOST'),    
-    port:                 ENV.fatch('EMAIL_PORT'),    
-    user_name:            ENV.fatch('EMAIL_USERNAME'),    
-    password:             ENV.fatch('EMAIL_PASSWORD'),    
+    address:              ENV.fetch('EMAIL_HOST'),    
+    port:                 ENV.fetch('EMAIL_PORT'),    
+    user_name:            ENV.fetch('EMAIL_USERNAME'),    
+    password:             ENV.fetch('EMAIL_PASSWORD'),    
     authentication:      'plain',    
     enable_starttls_auto: true  
   }
