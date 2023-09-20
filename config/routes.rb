@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root to: proc { |env| [200, {}, [ENV.fetch('APP_NAME') { 'API V1' }]] }
+  root to: proc { |env| [200, {}, [ActionController::Base.new.render_to_string(template: 'index')]] }
   
   # /api/v1
   scope :api do
