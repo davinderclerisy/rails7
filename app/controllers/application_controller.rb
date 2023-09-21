@@ -2,8 +2,8 @@ class ApplicationController < ActionController::API
     include JwtToken
 
     # Action Controller Callback
-    before_action :authenticate_user
     around_action :with_locale
+    before_action :authenticate_user
 
     def with_locale
         begin
