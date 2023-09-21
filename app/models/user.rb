@@ -29,7 +29,7 @@ class User < ApplicationRecord
     }, if: -> { new_record? || !password.nil? }
  
     def sanitize_user_name
-        self.user_name = user_name.downcase.gsub(/[^a-z0-9]+/, "")
+        self.user_name = user_name&.downcase&.gsub(/[^a-z0-9]+/, "")
     end
 
     def as_json(options = {})

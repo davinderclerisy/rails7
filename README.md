@@ -19,6 +19,11 @@ Install Ruby
 sudo apt-get install ruby-full
 ```
 
+Install Ruby Gem (if not exist)
+```
+sudo apt install rubygems -y
+```
+
 Install Bundle
 ```
 sudo gem install bundler

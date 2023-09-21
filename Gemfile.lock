@@ -80,6 +80,7 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -220,6 +221,12 @@ GEM
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
       redis-client (>= 0.14.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     stringio (3.0.8)
     thor (1.2.2)
     timeout (0.4.0)
@@ -249,6 +256,7 @@ DEPENDENCIES
   rspec-rails (~> 6.0)
   rswag
   sidekiq
+  simplecov
   tzinfo-data
 
 RUBY VERSION
