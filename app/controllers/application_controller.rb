@@ -34,14 +34,14 @@ class ApplicationController < ActionController::API
     private
     def authenticate_user
         header = request.headers["Authorization"]
-        token = header&.split(" ")&.last if header
+        token = header&.split(" ")&.last
         begin
             @decoded = JwtToken.jwt_decode(token)
             ActiveRecord::Base.logger.silence do
                 @current_user = User.find(@decoded[:user_id])
-                if @current_user == nil
+                if @current_user.nil?
                     render_response({}, :unauthorized, I18n.t('auth.invalid_token'))
-                elsif !@current_user&.is_verified
+                elsif !@current_user.is_verified
                     render_response({}, :unauthorized, I18n.t('auth.not_verified'))
                 end
             end
