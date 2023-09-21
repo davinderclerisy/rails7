@@ -97,16 +97,10 @@ describe 'Posts API' do
       parameter name: :post_body, in: :body, schema: {
         type: :object,
         properties: {
-          data: {
-            type: "object",
-            properties: {
-              title: { type: :string },
-              body: { type: :string },
-              is_public: { type: :boolean },
-              is_draft: { type: :boolean }
-            },
-          },
-          message: { type: "string" }
+          title: { type: :string },
+          body: { type: :string },
+          is_public: { type: :boolean },
+          is_draft: { type: :boolean }
         },
         required: ['title', 'body']
       }
